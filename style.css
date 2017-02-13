@@ -1,0 +1,36 @@
+body {
+  margin: 0px;
+}
+/*initialize flexbox container and flexbox items*/
+.fc {
+  display: flex;
+  flex-flow: column wrap;
+}
+.fc > * {
+  margin: 10px;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+  flex: 1 1;
+  /* explicitly set width to the viewport width, minus
+               the combined widths of the header/footer (100px each) 
+               and the margins (which add to 20px)
+            
+               when setting a lot of widths, we probably need box-sizing
+            */
+  max-width: calc(100vw-220px);
+  box-sizing: border-box;
+}
+
+
+/* header and footer should be full height and 100 px wide */
+.fc header,
+.fc footer {
+  margin: 0px;
+  flex: 1 1 100vh;
+  width: 100px;
+}
+.fc {
+  width: 100vw;
+  height: 100vh;
+}
